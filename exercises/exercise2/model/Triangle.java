@@ -1,4 +1,4 @@
-package exercises.exercise1.model;
+package exercises.exercise2.model;
 
 public class Triangle extends Shape{
     public Triangle(float height, float width) {

@@ -1,4 +1,4 @@
-package exercises.exercise1.model;
+package exercises.exercise2.model;
 
 public class Square extends Shape{
     public Square(float length) {

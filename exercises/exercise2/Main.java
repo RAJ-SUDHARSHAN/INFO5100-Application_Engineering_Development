@@ -1,11 +1,11 @@
-// import exercise1.model.*;
-package exercises.exercise1;
+// import exercise2.model.*;
+package exercises.exercise2;
 
-import exercises.exercise1.model.Circle;
-import exercises.exercise1.model.Rectangle;
-import exercises.exercise1.model.Shape;
-import exercises.exercise1.model.Square;
-import exercises.exercise1.model.Triangle;
+import exercises.exercise2.model.Circle;
+import exercises.exercise2.model.Rectangle;
+import exercises.exercise2.model.Shape;
+import exercises.exercise2.model.Square;
+import exercises.exercise2.model.Triangle;
 
 public class Main {
     public static void main(String[] args) {
