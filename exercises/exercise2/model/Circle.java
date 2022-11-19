@@ -1,4 +1,4 @@
-package exercises.exercise1.model;
+package exercises.exercise2.model;
 
 public class Circle extends Shape{
     public static String color = "Blue";

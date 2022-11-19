@@ -1,4 +1,4 @@
-package exercises.exercise1.model;
+package exercises.exercise2.model;
 
 public abstract class Shape {
     private float height;
