@@ -1,0 +1,32 @@
+// import exercise1.model.*;
+package exercises.exercise1;
+
+import exercises.exercise1.model.Circle;
+import exercises.exercise1.model.Rectangle;
+import exercises.exercise1.model.Shape;
+import exercises.exercise1.model.Square;
+import exercises.exercise1.model.Triangle;
+
+public class Main {
+    public static void main(String[] args) {
+        float length = 15f;
+        float width = 20f;
+        float height = 10f;
+        
+        // Abstraction, Overriding, Polymorphism
+        Shape s1 = new Triangle(height, length);
+        System.out.println("Area of Triangle: " + s1.calculateArea());
+
+        Shape s2 = new Rectangle(length, width);
+        System.out.println("Area of Rectangle: " + s2.calculateArea());
+
+        Shape s3 = new Circle(height);
+        System.out.println("Area of Circle: " + s3.calculateArea());
+
+        // Static Field
+        System.out.println("Circle color: " +  Circle.color);
+
+        Shape s4 = new Square(length);
+        System.out.println("Square area: " + s4.calculateArea());
+    }
+}
