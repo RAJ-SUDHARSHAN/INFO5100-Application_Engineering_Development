@@ -8,6 +8,7 @@ public class Circle extends Shape{
         super(radius);
     }
 
+    @Override
     public double calculateArea()
     {
         return 3.14 * getHeight() * getHeight();
