@@ -24,7 +24,7 @@ public class Main {
         System.out.println("Area of Circle: " + s3.calculateArea());
 
         // Static Field
-        System.out.println("Circle color: " +  Circle.color);
+        System.out.println("Circle name: " +  Circle.name);
 
         Shape s4 = new Square(length);
         System.out.println("Square area: " + s4.calculateArea());

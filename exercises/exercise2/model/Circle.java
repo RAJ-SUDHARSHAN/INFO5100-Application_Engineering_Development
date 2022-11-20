@@ -1,7 +1,8 @@
 package exercises.exercise2.model;
 
 public class Circle extends Shape{
-    public static String color = "Blue";
+
+    public static String name = "Circle Class";
 
     public Circle(float radius) {
         super(radius);
