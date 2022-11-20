@@ -13,11 +13,11 @@ public abstract class Shape {
         this.width = width;
     }
 
-    public double getHeight() {
+    public float getHeight() {
         return height;
     }
 
-    public double getWidth() {
+    public float getWidth() {
         return width;
     }
 
