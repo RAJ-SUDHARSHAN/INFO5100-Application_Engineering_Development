@@ -22,45 +22,38 @@ public class Exercise1 {
             quizscores.add(score);
         }
 
-        System.out.println(quizscores.size());
-        System.out.println(quizscores.get(0).size());
-        System.out.println(quizscores.get(0));
-
         Session session = new Session();
         for (int i = 1; i < 21; i++) {
             System.out.println("-------------------------------------------------------------------");
-            
+
             if (i < 8) {
-                Student s = new PartTime("student" + String.valueOf(i), i, quizscores.get(i));
+                PartTime s = new PartTime("student" + String.valueOf(i), i, quizscores.get(i));
                 session.addPartTimeStudent(s);
                 session.printQuizScore(s, s.getScore());
                 session.calculateAvgQuizScore(s, s.getScore());
             } else {
-                ArrayList<Integer> examScore = new ArrayList<Integer>(Arrays.asList(rand.nextInt(60) + 40, rand.nextInt(60) + 40));
-                // int[] examScore = new int[]{rand.nextInt(60) + 40, rand.nextInt(60) + 40};
-                Student s = new FullTime("student" + String.valueOf(i), i, quizscores.get(i-1), examScore);
+                ArrayList<Integer> examScore = new ArrayList<Integer>(
+                        Arrays.asList(rand.nextInt(60) + 40, rand.nextInt(60) + 40));
+                FullTime s = new FullTime("student" + String.valueOf(i), i, quizscores.get(i - 1), examScore);
                 session.addFullTimeStudent(s);
                 session.printQuizScore(s, s.getScore());
                 session.calculateAvgQuizScore(s, s.getScore());
             }
         }
 
-        System.out.println("------------------------------------ Full Time Student List ------------------------------------");
-        for (int i=0; i<session.getFullTimeStudentList().size(); i++){
-            System.out.println(session.getFullTimeStudentList().get(i).getName());
-        }
-        
-        System.out.println("------------------------------------ Part Time Student List ------------------------------------");
-        // for (int i=0; i<session.getPartTimeStudentList().size(); i++){
-        //     System.out.println(session.getPartTimeStudentList().get(i).getName());
+        // System.out.println("------------------------------------ Full Time Student
+        // List ------------------------------------");
+        // for (int i=0; i<session.getFullTimeStudentList().size(); i++){
+        // System.out.println(session.getFullTimeStudentList().get(i).getName());
         // }
+
+        System.out.println(
+                "------------------------------------ Part Time Student List ------------------------------------");
         session.printPartTimeStudentNames();
 
-        // System.out.println("------------------------------------ Full Time Student's Exam Scores ------------------------------------");
-        // for (int i=0; i<session.getFullTimeStudentList().size(); i++){
-        //     System.out.println(session.getFullTimeStudentList().get(i).getScore());
-        // }
-        // session.printFullTimeStudentScores();
+        System.out.println(
+                "------------------------------------ Full Time Student's Exam Scores ------------------------------------");
+        session.printFullTimeStudentScores();
 
     }
 }
