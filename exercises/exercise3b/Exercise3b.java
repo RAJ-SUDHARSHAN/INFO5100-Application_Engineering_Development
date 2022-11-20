@@ -150,7 +150,7 @@ public class Exercise3b {
         System.out.println("Area of Circle: " + c.calculateArea());
         
         // Static Field
-        System.out.println("Circle color: " + Circle.name);
+        System.out.println("Circle name: " + Circle.name);
         System.out.println("----------------------------------------------");
         
         // ---------------------------------------------------------------------------------------------------------------------------------------
