@@ -5,22 +5,19 @@ import java.util.Comparator;
 
 public class Session {
     private double avgQuizScore = 0;
-    private String names;
-    private ArrayList<Student> StudentList;
-    private ArrayList<Student> fullTimeStudentList;
-    private ArrayList<Student> partTimeStudentList;
+    private ArrayList<FullTime> fullTimeStudentList;
+    private ArrayList<PartTime> partTimeStudentList;
 
     public Session() {
-        this.StudentList = new ArrayList<Student>();
-        this.fullTimeStudentList = new ArrayList<Student>();
-        this.partTimeStudentList = new ArrayList<Student>();
+        this.fullTimeStudentList = new ArrayList<FullTime>();
+        this.partTimeStudentList = new ArrayList<PartTime>();
     }
 
-    public void addFullTimeStudent(Student student) {
+    public void addFullTimeStudent(FullTime student) {
         fullTimeStudentList.add(student);
     }
-    
-    public void addPartTimeStudent(Student student) {
+
+    public void addPartTimeStudent(PartTime student) {
         partTimeStudentList.add(student);
     }
 
@@ -28,45 +25,36 @@ public class Session {
         return avgQuizScore;
     }
 
-    public String getNames() {
-        return names;
-    }
-
-    public ArrayList<Student> getStudentList() {
-        return StudentList;
-    }
-
-    public ArrayList<Student> getFullTimeStudentList() {
+    public ArrayList<FullTime> getFullTimeStudentList() {
         return fullTimeStudentList;
     }
 
-    public ArrayList<Student> getPartTimeStudentList() {
+    public ArrayList<PartTime> getPartTimeStudentList() {
         return partTimeStudentList;
     }
 
     public void calculateAvgQuizScore(Student student, ArrayList<Integer> quizScore) {
-        for (int score : quizScore){
+        for (int score : quizScore) {
             avgQuizScore += score;
         }
-        System.out.println("Average quiz score of the " + student.getName() + " is " + avgQuizScore/quizScore.size());
+        System.out.println("\nAverage quiz score for " + student.getName() + " is " + avgQuizScore / quizScore.size());
     }
 
     public void printQuizScore(Student student, ArrayList<Integer> quizScore) {
-        System.out.println("Quiz scores of " + student.getName() + " in original order\n " + quizScore);
-        quizScore.sort(Comparator.naturalOrder());;
-        System.out.println("Quiz scores of " + student.getName() + " in ascending order\n " + quizScore);
+        System.out.println("Quiz scores for " + student.getName() + " in original order \n" + quizScore);
+        quizScore.sort(Comparator.naturalOrder());
+        System.out.println("\nQuiz scores for " + student.getName() + " in ascending order\n " + quizScore);
     }
 
     public void printPartTimeStudentNames() {
-        for (Student s: partTimeStudentList){
+        for (PartTime s : partTimeStudentList) {
             System.out.println(s.getName());
         }
     }
 
-    // public void printFullTimeStudentScores() {
-    //     for (Student s: fullTimeStudentList) {
-    //         System.out.println("Exam scores of full time " + s.getName() + " is " + s.getExamScore());
-    //     }
-    //     // System.out.println("Exam scores of full time " + s.getName() + " is " + s.getScore());
-    // }
+    public void printFullTimeStudentScores() {
+        for (FullTime s : fullTimeStudentList) {
+            System.out.println("Exam scores for full time " + s.getName() + " is " + s.printExamScore());
+        }
+    }
 }

@@ -7,9 +7,9 @@ public class Student {
     String name;
     int id;
     ArrayList<Integer> score;
-    Random rand = new Random(); 
+    Random rand = new Random();
 
-    public Student(String name, int id, ArrayList<Integer> score){
+    public Student(String name, int id, ArrayList<Integer> score) {
         this.name = name;
         this.id = id;
         this.score = score;
@@ -26,5 +26,5 @@ public class Student {
     public ArrayList<Integer> getScore() {
         return score;
     }
-    
+
 }
