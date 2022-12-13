@@ -59,20 +59,28 @@ public class MainController {
 
     @FXML
     public void uploadImageButton(ActionEvent e) {
+//   1. Take one or more image file(s) as input
+//   2. Develop GUI to allow user to upload image file(s) from desktop/laptop
 
         FileChooser fc = new FileChooser();
         fc.setTitle("Select an image file");
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
-            System.out.println(selectedFile.getAbsolutePath().getClass().getName());
+//            System.out.println(selectedFile.getAbsolutePath().getClass().getName());
             // Set the text of the location label to the file path
+
             fileLocationLabel.setText(selectedFile.getAbsolutePath());
             image = new ImageView();
             Image imageFile = new Image(selectedFile.toURI().toString());
             // Set the image to a valid Image object
-            image.setImage(new Image(selectedFile.toURI().toString()));
+            image.setImage(imageFile);
+//   3. When uploaded, show image(s) thumbnail(s) (100x100) to users on GUI
 
             thumbnail.setImage(image.getImage());
+            thumbnail.setFitWidth(100);
+            thumbnail.setFitHeight(100);
+
+//   4. Also, show image properties (height, width, size, location, etc.)
 
             width.setText(String.valueOf(imageFile.getWidth()));
             height.setText(String.valueOf(imageFile.getHeight()));
@@ -97,6 +105,9 @@ public class MainController {
         if (selectedFile != null) {
             try {
                 // Read the image file into a BufferedImage object
+                // 5.   Use Image IO/ImageMagick/JMagick to convert image to various formats
+                // 6.   Develop GUI to allow user to select which format(s) to convert the image(s) to
+
                 BufferedImage imageFile = ImageIO.read(selectedFile);
                 BufferedImage awtImage = new BufferedImage((int) imageFile.getWidth(), (int) imageFile.getHeight(), BufferedImage.TYPE_INT_RGB);
 
@@ -115,6 +126,7 @@ public class MainController {
 
                 // Create an ExtensionFilter for the selected format and add it to the FileChooser
                 fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(selectedFormat.toUpperCase() + " files (*." + selectedFormat + ")", "*." + selectedFormat));
+                //  7.  Develop GUI to allow users to download converted images
                 File downloadLocation = fc.showSaveDialog(null);
                 if (downloadLocation != null) {
                     // Convert the BufferedImage to a JavaFX Image object
